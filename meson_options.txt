@@ -1,0 +1,4 @@
+option('testapp', type: 'boolean', value: false, description: 'Compile the test application.')
+option('example', type: 'boolean', value: false, description: 'Compile example programs.')
+option('unit-test', type: 'boolean', value: false, description: 'Compile unit tests. May result in slower code.')
+option('simd', type: 'boolean', value: true, description: 'Enable SIMD code.')

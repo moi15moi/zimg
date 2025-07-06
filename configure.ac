@@ -55,6 +55,7 @@ AS_IF([test "x$enable_debug" = "xyes"],
       [AC_SUBST([DEBUGCFLAGS], ["-O0 -g3 -ggdb"])],
       [AC_SUBST([DEBUGCFLAGS], ["-DNDEBUG"])])
 
+# TODO Je pense que ce n'est pas nécessaire
 AC_LANG_PUSH([C++])
 AC_MSG_CHECKING(for the C++ standard library)
 AS_IF([test "x$STL_LIBS" = "x"],
@@ -103,6 +104,7 @@ AM_CONDITIONAL([ARMSIMD],        [test "x$enable_arm_simd" = "xyes"])
 AM_CONDITIONAL([X86SIMD],        [test "x$enable_x86_simd" = "xyes"])
 AM_CONDITIONAL([X86SIMD_AVX512], [test "x$enable_x86_simd_avx512" = "xyes"])
 
+# TODO Je crois que meson gère ceci automatiquement
 AS_CASE([$host_os],
         [cygwin*], [AS_IF([test "x$BITS" = "x32"], [LDFLAGS="-Wl,--kill-at"])],
         [mingw*],  [AS_IF([test "x$BITS" = "x32"], [LDFLAGS="-Wl,--kill-at"])])
